@@ -1,5 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import React from "react";
+// import Dropdown from 'react-bootstrap/Dropdown';
+import Dropdown from "@/components/dropdowns";
 
 export default function ItemList() {
   return (
@@ -93,7 +97,9 @@ export default function ItemList() {
           </div>
         </div>
       </div>
-      
+      <div className="flex flex-row justify-center mt-10">
+        <Dropdown />
+      </div>
     </main>
   );
 }
