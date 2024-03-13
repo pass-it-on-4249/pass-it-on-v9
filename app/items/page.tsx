@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 
-export default function Home() {
+export default function ItemList() {
   return (
     <main className="flex flex-col width: auto">
       <div className="flex flex-row justify-center items-start width:990px">
@@ -27,7 +27,7 @@ export default function Home() {
           </div>
           <div
             className="flex flex-row items-center justify-end pt-3">
-            <a href="https://www.passiton.org.sg/">
+            <a href="/..">
               <Image
                 className="ive_eobj_left ive_clickable padding-right: 2px padding-left: 2px"
                 src="/home.png"
@@ -93,42 +93,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="flex flex-row justify-center pt-10">
-          <Image
-            className="" 
-            src="/banner.jpeg" 
-            alt="banner" 
-            width={850}
-            height={320}
-          />
-      </div>
-      <div className="flex flex-row justify-center mt-[-2px]">
-          <Image
-            className="" 
-            src="/wishlist.png" 
-            alt="wishlist" 
-            width={850}
-            height={320}
-          />
-      </div>
-      <div className="flex flex-row justify-center mt-[-2px]">
-          <Image
-            className="" 
-            src="/recent_items.png" 
-            alt="recent_items" 
-            width={850}
-            height={320}
-          />
-      </div>
-      <div className="flex flex-row justify-center mt-[-2px]">
-          <Image
-            className="" 
-            src="/footer.png" 
-            alt="footer" 
-            width={850}
-            height={320}
-          />
-      </div>
+      
     </main>
   );
 }
