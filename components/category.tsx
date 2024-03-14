@@ -9,8 +9,8 @@ function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function Dropdown() {
-  const [selectedOption, setSelectedOption] = useState('Title');
+export default function Category() {
+  const [selectedOption, setSelectedOption] = useState('Category');
 
   const handleOptionClick = (option: React.SetStateAction<string>) => {
     setSelectedOption(option);
@@ -45,9 +45,9 @@ export default function Dropdown() {
                     active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                     'block px-4 py-2 text-sm'
                   )}
-                  onClick={() => handleOptionClick('ID')} // Update selected option
+                  onClick={() => handleOptionClick('Attires / Clothings')} // Update selected option
                 >
-                  ID
+                  Attires / Clothings
                 </a>
               )}
             </Menu.Item>
@@ -59,9 +59,9 @@ export default function Dropdown() {
                     active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                     'block px-4 py-2 text-sm'
                   )}
-                  onClick={() => handleOptionClick('Title')} // Update selected option
+                  onClick={() => handleOptionClick('Electrical Home Appliances')} // Update selected option
                 >
-                  Title
+                  Electrical Home Appliances
                 </a>
               )}
             </Menu.Item>
@@ -73,9 +73,9 @@ export default function Dropdown() {
                     active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                     'block px-4 py-2 text-sm'
                   )}
-                  onClick={() => handleOptionClick('Donor Email')} // Update selected option
+                  onClick={() => handleOptionClick('Home Furnishing')} // Update selected option
                 >
-                  Donor Email
+                  Home Furnishing
                 </a>
               )}
             </Menu.Item>
@@ -87,9 +87,9 @@ export default function Dropdown() {
                     active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                     'block px-4 py-2 text-sm'
                   )}
-                  onClick={() => handleOptionClick('Donor Location')} // Update selected option
+                  onClick={() => handleOptionClick('Infant and Children Items')} // Update selected option
                 >
-                  Donor Location
+                  Infant and Children Items
                 </a>
               )}
             </Menu.Item>
@@ -101,9 +101,79 @@ export default function Dropdown() {
                     active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                     'block px-4 py-2 text-sm'
                   )}
-                  onClick={() => handleOptionClick('Donor Contact')} // Update selected option
+                  onClick={() => handleOptionClick('Kitchen Utility Items')} // Update selected option
                 >
-                  Donor Contact
+                  Kitchen Utility Items
+                </a>
+              )}
+            </Menu.Item>
+            <Menu.Item>
+              {({ active }) => (
+                <a
+                  href="#"
+                  className={classNames(
+                    active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                    'block px-4 py-2 text-sm'
+                  )}
+                  onClick={() => handleOptionClick('Leisure and Healthy Lifestyle')} // Update selected option
+                >
+                  Leisure and Healthy Lifestyle
+                </a>
+              )}
+            </Menu.Item>
+            <Menu.Item>
+              {({ active }) => (
+                <a
+                  href="#"
+                  className={classNames(
+                    active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                    'block px-4 py-2 text-sm'
+                  )}
+                  onClick={() => handleOptionClick('Learning Aids')} // Update selected option
+                >
+                  Learning Aids
+                </a>
+              )}
+            </Menu.Item>
+            <Menu.Item>
+              {({ active }) => (
+                <a
+                  href="#"
+                  className={classNames(
+                    active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                    'block px-4 py-2 text-sm'
+                  )}
+                  onClick={() => handleOptionClick('Medical Aids')} // Update selected option
+                >
+                  Medical Aids
+                </a>
+              )}
+            </Menu.Item>
+            <Menu.Item>
+              {({ active }) => (
+                <a
+                  href="#"
+                  className={classNames(
+                    active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                    'block px-4 py-2 text-sm'
+                  )}
+                  onClick={() => handleOptionClick('Mobility Aids')} // Update selected option
+                >
+                  Mobility Aids
+                </a>
+              )}
+            </Menu.Item>
+            <Menu.Item>
+              {({ active }) => (
+                <a
+                  href="#"
+                  className={classNames(
+                    active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                    'block px-4 py-2 text-sm'
+                  )}
+                  onClick={() => handleOptionClick('Others')} // Update selected option
+                >
+                  Others
                 </a>
               )}
             </Menu.Item>
