@@ -3,7 +3,7 @@ import React from "react";
 
 export default function Home() {
   return (
-    <main className="flex flex-col width: auto">
+    <main className="flex flex-col bg-white text-stone-900">
       <div className="flex flex-row justify-center items-start width:990px">
         <div style={{ float: "left", paddingTop: 5 }}>
           <a href="https://www.passiton.org.sg/">
@@ -27,7 +27,7 @@ export default function Home() {
           </div>
           <div
             className="flex flex-row items-center justify-end pt-3">
-            <a href="https://www.passiton.org.sg/">
+            <a href="">
               <Image
                 className="ive_eobj_left ive_clickable padding-right: 2px padding-left: 2px"
                 src="/home.png"
@@ -120,7 +120,7 @@ export default function Home() {
             height={320}
           />
       </div>
-      <div className="flex flex-row justify-center mt-[-2px]">
+      <div className="flex flex-row justify-center mt-[-2px] mb-10">
           <Image
             className="" 
             src="/footer.png" 
