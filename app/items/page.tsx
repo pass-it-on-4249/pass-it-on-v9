@@ -10,7 +10,8 @@ import ResetButton from "@/components/resetButton";
 import PageNav from "@/components/pageNav";
 import ProductCard from "@/components/productCard";
 import { ShoppingCartIcon } from '@heroicons/react/20/solid';
-import { productData } from "@/lib/data";
+// import { productData } from "@/lib/data";
+import productData from "@/public/script/scraped_data.json";
 
 export default function ItemList() {
   return (
