@@ -8,7 +8,9 @@ import Category from "@/components/category";
 import SearchButton from "@/components/searchButton";
 import ResetButton from "@/components/resetButton";
 import PageNav from "@/components/pageNav";
-import { ShoppingCartIcon } from '@heroicons/react/20/solid'
+import ProductCard from "@/components/productCard";
+import { ShoppingCartIcon } from '@heroicons/react/20/solid';
+import { productData } from "@/lib/data";
 
 export default function ItemList() {
   return (
@@ -117,6 +119,14 @@ export default function ItemList() {
         <div className="ml-56 pl-10">
           <PageNav />
         </div>  
+      </div>
+      
+      <div className="flex flex-row justify-center items-center mt-7">
+        <div className="grid grid-cols-3 gap-8">
+          {productData.map(product => (
+             <ProductCard product={product} />
+          ))}
+        </div>
       </div>
     </main>
   );
