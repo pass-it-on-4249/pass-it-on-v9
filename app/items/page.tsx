@@ -116,7 +116,7 @@ export default function ItemList() {
         </div>
         <div className="ml-56 pl-10">
           <PageNav />
-        </div>  
+        </div>
       </div>
     </main>
   );
