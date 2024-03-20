@@ -1,4 +1,6 @@
 import React from 'react';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 interface Product {
   id: string;
@@ -20,6 +22,13 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
 
   const formattedLocation = product.location.join(', ');
 
+  const handleAddToCartClick = () => {
+    toast.success('Item added to cart!', {
+      position: 'top-right', 
+      autoClose: 2000 
+    });
+  };
+
   return (
     <div className="relative w-60 border border-gray-200 rounded-lg shadow-sm p-4">
       <p className="text-sm text-gray-600 mb-2 font-semibold">{product.id}</p>
@@ -30,7 +39,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           className="w-full h-64 object-cover mb-2 rounded-2xl"
           style={{ maxWidth: "205px", maxHeight: "205px" }}
         />
-          <button className="absolute top-3 right-3 focus:outline-none">
+          <button className="absolute top-3 right-3 focus:outline-none" onClick={handleAddToCartClick}>
             <img src="/addButton.png" alt="Add to Cart" className="w-8 h-8" />
           </button>
       </div>

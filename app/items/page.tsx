@@ -10,8 +10,9 @@ import ResetButton from "@/components/resetButton";
 import PageNav from "@/components/pageNav";
 import ProductCard from "@/components/productCard";
 import { ShoppingCartIcon } from '@heroicons/react/20/solid';
-// import { productData } from "@/lib/data";
 import productData from "@/public/script/scraped_data.json";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function ItemList() {
   return (
@@ -105,6 +106,7 @@ export default function ItemList() {
           </div>
         </div>
       </div>
+      <ToastContainer />
       <div className="flex flex-row justify-center items-center mt-10">
         <Dropdown />
         <SearchBar />
