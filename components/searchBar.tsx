@@ -2,8 +2,8 @@
 
 import React from 'react';
 
+export default function SearchBar({query, handleInputChange}) {
 
-export default function SearchBar() {
     return(
         <form className="mx-3 max-w-md h-10">
         <label
@@ -35,6 +35,8 @@ export default function SearchBar() {
             id="default-search"
             className="block w-96 p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-full bg-white focus:ring-gray-500 focus:border-gray-500"
             placeholder="Search"
+            value={query}
+            onChange={handleInputChange}
             />
             {/* <button
             type="submit"

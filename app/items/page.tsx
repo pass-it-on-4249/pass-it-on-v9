@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 import React from "react";
+import { useState } from "react";
+
 import Dropdown from "@/components/dropdowns";
 import SearchBar from "@/components/searchBar";
 import Category from "@/components/category";
@@ -14,6 +16,28 @@ import { ShoppingCartIcon } from '@heroicons/react/20/solid';
 import productData from "@/public/script/scraped_data.json";
 
 export default function ItemList() {
+  
+  // Input filter
+  const [query, setQuery] = useState("");
+
+  const handleInputChange = event => {
+      setQuery(event.target.value)
+  };
+
+  const getFilteredData = (query, data) => {
+    if (!query) {
+      return data;
+    }
+    
+    // Filter data regardless of order of words in query
+    const words = query.toLocaleLowerCase().split(" ");
+    return data.filter(product => {
+      return words.every(word => product.title.toLocaleLowerCase().includes(word))});
+  }
+
+  const filteredData = getFilteredData(query, productData);
+
+
   return (
     <main className="flex flex-col bg-white text-stone-900">
       <div className="flex flex-row justify-center items-start width:990px">
@@ -107,7 +131,7 @@ export default function ItemList() {
       </div>
       <div className="flex flex-row justify-center items-center mt-10">
         <Dropdown />
-        <SearchBar />
+        <SearchBar query={query} handleInputChange={handleInputChange}/>
         <Category />
         <SearchButton />
         <ResetButton />
@@ -122,9 +146,10 @@ export default function ItemList() {
         </div>
       </div>
       
+      {/* TODO visual bug: when there is no products, there is a weird black divison line*/}
       <div className="flex flex-row justify-center items-center mt-7">
         <div className="grid grid-cols-3 gap-8">
-          {productData.map(product => (
+          {filteredData.map(product => (
              <ProductCard product={product} />
           ))}
         </div>
