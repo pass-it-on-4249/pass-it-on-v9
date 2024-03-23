@@ -9,13 +9,12 @@ function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function Dropdown() {
+export default function TitleDropdown() {
   const [selectedOption, setSelectedOption] = useState('Title');
 
   const handleOptionClick = (option: React.SetStateAction<string>) => {
     setSelectedOption(option);
   };
-
 
   return (
     <Menu as="div" className="relative inline-block text-left">
@@ -107,22 +106,6 @@ export default function Dropdown() {
                 </a>
               )}
             </Menu.Item>
-            {/* <form method="POST" action="#">
-              <Menu.Item>
-                {({ active }) => (
-                  <button
-                    type="submit"
-                    className={classNames(
-                      active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                      'block w-full px-4 py-2 text-left text-sm'
-                    )}
-                    onClick={() => handleOptionClick('Donor Contact')} // Update selected option
-                  >
-                    Donor Contact
-                  </button>
-                )}
-              </Menu.Item>
-            </form> */}
           </div>
         </Menu.Items>
       </Transition>

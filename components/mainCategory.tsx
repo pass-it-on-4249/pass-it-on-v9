@@ -9,7 +9,7 @@ function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function Category() {
+export default function MainCategory() {
   const [selectedOption, setSelectedOption] = useState('Category');
 
   const handleOptionClick = (option: React.SetStateAction<string>) => {

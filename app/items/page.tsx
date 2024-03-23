@@ -4,39 +4,21 @@ import Image from "next/image";
 import React from "react";
 import { useState } from "react";
 
-import Dropdown from "@/components/dropdowns";
-import SearchBar from "@/components/searchBar";
-import Category from "@/components/category";
-import SearchButton from "@/components/searchButton";
-import ResetButton from "@/components/resetButton";
 import PageNav from "@/components/pageNav";
 import ProductCard from "@/components/productCard";
 import { ShoppingCartIcon } from '@heroicons/react/20/solid';
-import productData from "@/public/script/scraped_data.json";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import SearchNavMainCat from "@/components/searchNavMainCat";
+import productData from "@/public/script/scraped_data.json";
+
 
 export default function ItemList() {
   
-  // Input filter
-  const [query, setQuery] = useState("");
-
-  const handleInputChange = event => {
-      setQuery(event.target.value)
-  };
-
-  const getFilteredData = (query, data) => {
-    if (!query) {
-      return data;
-    }
-    
-    // Filter data regardless of order of words in query
-    const words = query.toLocaleLowerCase().split(" ");
-    return data.filter(product => {
-      return words.every(word => product.title.toLocaleLowerCase().includes(word))});
+  const [data, setData] = useState(productData);
+  const setDataFunction = (data) => {
+    setData(data);
   }
-
-  const filteredData = getFilteredData(query, productData);
 
 
   return (
@@ -131,13 +113,7 @@ export default function ItemList() {
         </div>
       </div>
       <ToastContainer />
-      <div className="flex flex-row justify-center items-center mt-10">
-        <Dropdown />
-        <SearchBar query={query} handleInputChange={handleInputChange}/>
-        <Category />
-        <SearchButton />
-        <ResetButton />
-      </div>
+      <SearchNavMainCat setDataFunction={setDataFunction}/>
       <div className="flex flex-row justify-center items-center mt-7">
         <div className="flex flex-row items-center mr-52 ml-4"> 
           <div className="text-[#2BA41D] font-semibold pr-2">My Cart</div>
@@ -151,7 +127,7 @@ export default function ItemList() {
       {/* TODO visual bug: when there is no products, there is a weird black divison line*/}
       <div className="flex flex-row justify-center items-center mt-7">
         <div className="grid grid-cols-3 gap-8">
-          {filteredData.map(product => (
+          {data.map(product => (
              <ProductCard product={product} />
           ))}
         </div>
