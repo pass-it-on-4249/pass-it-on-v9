@@ -9,17 +9,27 @@ import ProductCard from "@/components/productCard";
 import { ShoppingCartIcon } from '@heroicons/react/20/solid';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import SearchNavMainCat from "@/components/searchNavMainCat";
+import SearchNavMainCategory from "@/components/searchNavMainCategory";
 import productData from "@/public/script/scraped_data.json";
 
 
 export default function ItemList() {
   
   const [data, setData] = useState(productData);
-  const setDataFunction = (data) => {
+  const handleUpdateData = (data:any) => {
     setData(data);
   }
 
+  const handleNoItemsFound = (isVisible:boolean) => {
+    const noItemsFound = document.getElementById("no-items-found-text")!
+    if (isVisible) {
+      noItemsFound.style.display = "block";
+      noItemsFound.style.color = "#000000";
+    } else {
+      noItemsFound.style.display = "none";
+    }
+  }
+  //handleNoItemsFound(false);
 
   return (
     <main className="flex flex-col bg-white text-stone-900">
@@ -113,7 +123,9 @@ export default function ItemList() {
         </div>
       </div>
       <ToastContainer />
-      <SearchNavMainCat setDataFunction={setDataFunction}/>
+
+      <SearchNavMainCategory handleUpdateData={handleUpdateData} handleNoItemsFound={handleNoItemsFound}/>
+      
       <div className="flex flex-row justify-center items-center mt-7">
         <div className="flex flex-row items-center mr-52 ml-4"> 
           <div className="text-[#2BA41D] font-semibold pr-2">My Cart</div>
@@ -125,11 +137,16 @@ export default function ItemList() {
       </div>
       
       {/* TODO visual bug: when there is no products, there is a weird black divison line*/}
-      <div className="flex flex-row justify-center items-center mt-7">
-        <div className="grid grid-cols-3 gap-8">
+      <div className="flex flex-col justify-center items-center mt-7">
+        <div id="product-cards-layout" className="grid grid-cols-3 gap-8" >
           {data.map(product => (
              <ProductCard product={product} />
           ))}
+        </div>
+
+        <div className="flex flex-col items-center mr-57 ml-4"> 
+          <h2 id="no-items-found-text" className="text-sm font-semibold mb-1 text-[#FFFFFF]">
+              There is no item found.</h2>
         </div>
       </div>
     </main>

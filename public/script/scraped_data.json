@@ -45,7 +45,7 @@
             "Toa Payoh"
         ],
         "delivery": true,
-        "mainCategory": "Leisure and Healthy Living",
+        "mainCategory": "Leisure and Healthy Lifestyle",
         "subCategory": "Exercise Equipment"
     },
     {
@@ -139,7 +139,7 @@
             ""
         ],
         "delivery": false,
-        "mainCategory": "Attires/Clothings",
+        "mainCategory": "Attires / Clothings",
         "subCategory": "Adult (Uni) shirts/pants/casual"
     },
     {
@@ -151,7 +151,7 @@
             ""
         ],
         "delivery": false,
-        "mainCategory": "Attires/Clothings",
+        "mainCategory": "Attires / Clothings",
         "subCategory": "Adult (Uni) shirts/pants/casual"
     },
     {
@@ -259,7 +259,7 @@
             "Thomson"
         ],
         "delivery": true,
-        "mainCategory": "Leisure and Healthy Living",
+        "mainCategory": "Leisure and Healthy Lifestyle",
         "subCategory": "Others"
     },
     {
@@ -286,7 +286,7 @@
             ""
         ],
         "delivery": false,
-        "mainCategory": "Attires/Clothings",
+        "mainCategory": "Attires / Clothings",
         "subCategory": "Children (Uni) shirts/pants/casual"
     },
     {
@@ -298,7 +298,7 @@
             ""
         ],
         "delivery": false,
-        "mainCategory": "Attires/Clothings",
+        "mainCategory": "Attires / Clothings",
         "subCategory": "Adult (Uni) shirts/pants/casual"
     },
     {
@@ -486,7 +486,7 @@
             "Tampines"
         ],
         "delivery": true,
-        "mainCategory": "Attires/Clothings",
+        "mainCategory": "Attires / Clothings",
         "subCategory": "Others"
     },
     {
@@ -616,7 +616,7 @@
             "Hillview"
         ],
         "delivery": true,
-        "mainCategory": "Attires/Clothings",
+        "mainCategory": "Attires / Clothings",
         "subCategory": "Adult (Uni) shirts/pants/casual"
     },
     {
@@ -656,7 +656,7 @@
             "Toa Payoh"
         ],
         "delivery": true,
-        "mainCategory": "Attires/Clothings",
+        "mainCategory": "Attires / Clothings",
         "subCategory": "Teenage (Male) shirts/pants/casual"
     },
     {
@@ -782,7 +782,7 @@
             "Yishun"
         ],
         "delivery": true,
-        "mainCategory": "Leisure and Healthy Living",
+        "mainCategory": "Leisure and Healthy Lifestyle",
         "subCategory": "Exercise Equipment"
     },
     {
@@ -858,7 +858,7 @@
             "Tanjong Rhu"
         ],
         "delivery": true,
-        "mainCategory": "Leisure and Healthy Living",
+        "mainCategory": "Leisure and Healthy Lifestyle",
         "subCategory": "Guitar Piano"
     },
     {
@@ -874,7 +874,7 @@
             "Hillview"
         ],
         "delivery": true,
-        "mainCategory": "Attires/Clothings",
+        "mainCategory": "Attires / Clothings",
         "subCategory": "Others"
     },
     {

@@ -9,19 +9,19 @@ function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function MainCategory() {
-  const [selectedOption, setSelectedOption] = useState('Category');
+export default function MainCategory({selectedMainCategory, handleMainCategoryOptionClick} : {selectedMainCategory:any, handleMainCategoryOptionClick:any}) {
+  // const [selectedOption, setSelectedOption] = useState('Category');
 
-  const handleOptionClick = (option: React.SetStateAction<string>) => {
-    setSelectedOption(option);
-  };
+  // const handleOptionClick = (option: React.SetStateAction<string>) => {
+  //   setSelectedOption(option);
+  // };
 
 
   return (
     <Menu as="div" className="relative inline-block text-left">
       <div>
         <Menu.Button className="inline-flex w-full justify-center h-10 items-center gap-x-1.5 rounded-full bg-white px-3 py-2 text-sm font-medium text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
-          {selectedOption}
+          {selectedMainCategory}
           <ChevronDownIcon className="-mr-1 h-5 w-5 text-gray-400" aria-hidden="true" />
         </Menu.Button>
       </div>
@@ -45,7 +45,7 @@ export default function MainCategory() {
                     active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                     'block px-4 py-2 text-sm'
                   )}
-                  onClick={() => handleOptionClick('Attires / Clothings')} // Update selected option
+                  onClick={() => handleMainCategoryOptionClick('Attires / Clothings')} // Update selected option
                 >
                   Attires / Clothings
                 </a>
@@ -59,7 +59,7 @@ export default function MainCategory() {
                     active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                     'block px-4 py-2 text-sm'
                   )}
-                  onClick={() => handleOptionClick('Electrical Home Appliances')} // Update selected option
+                  onClick={() => handleMainCategoryOptionClick('Electrical Home Appliances')} // Update selected option
                 >
                   Electrical Home Appliances
                 </a>
@@ -73,7 +73,7 @@ export default function MainCategory() {
                     active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                     'block px-4 py-2 text-sm'
                   )}
-                  onClick={() => handleOptionClick('Home Furnishing')} // Update selected option
+                  onClick={() => handleMainCategoryOptionClick('Home Furnishing')} // Update selected option
                 >
                   Home Furnishing
                 </a>
@@ -87,7 +87,7 @@ export default function MainCategory() {
                     active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                     'block px-4 py-2 text-sm'
                   )}
-                  onClick={() => handleOptionClick('Infant and Children Items')} // Update selected option
+                  onClick={() => handleMainCategoryOptionClick('Infant and Children Items')} // Update selected option
                 >
                   Infant and Children Items
                 </a>
@@ -101,7 +101,7 @@ export default function MainCategory() {
                     active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                     'block px-4 py-2 text-sm'
                   )}
-                  onClick={() => handleOptionClick('Kitchen Utility Items')} // Update selected option
+                  onClick={() => handleMainCategoryOptionClick('Kitchen Utility Items')} // Update selected option
                 >
                   Kitchen Utility Items
                 </a>
@@ -115,7 +115,7 @@ export default function MainCategory() {
                     active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                     'block px-4 py-2 text-sm'
                   )}
-                  onClick={() => handleOptionClick('Leisure and Healthy Lifestyle')} // Update selected option
+                  onClick={() => handleMainCategoryOptionClick('Leisure and Healthy Lifestyle')} // Update selected option
                 >
                   Leisure and Healthy Lifestyle
                 </a>
@@ -129,7 +129,7 @@ export default function MainCategory() {
                     active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                     'block px-4 py-2 text-sm'
                   )}
-                  onClick={() => handleOptionClick('Learning Aids')} // Update selected option
+                  onClick={() => handleMainCategoryOptionClick('Learning Aids')} // Update selected option
                 >
                   Learning Aids
                 </a>
@@ -143,7 +143,7 @@ export default function MainCategory() {
                     active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                     'block px-4 py-2 text-sm'
                   )}
-                  onClick={() => handleOptionClick('Medical Aids')} // Update selected option
+                  onClick={() => handleMainCategoryOptionClick('Medical Aids')} // Update selected option
                 >
                   Medical Aids
                 </a>
@@ -157,7 +157,7 @@ export default function MainCategory() {
                     active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                     'block px-4 py-2 text-sm'
                   )}
-                  onClick={() => handleOptionClick('Mobility Aids')} // Update selected option
+                  onClick={() => handleMainCategoryOptionClick('Mobility Aids')} // Update selected option
                 >
                   Mobility Aids
                 </a>
@@ -171,28 +171,12 @@ export default function MainCategory() {
                     active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                     'block px-4 py-2 text-sm'
                   )}
-                  onClick={() => handleOptionClick('Others')} // Update selected option
+                  onClick={() => handleMainCategoryOptionClick('Others')} // Update selected option
                 >
                   Others
                 </a>
               )}
             </Menu.Item>
-            {/* <form method="POST" action="#">
-              <Menu.Item>
-                {({ active }) => (
-                  <button
-                    type="submit"
-                    className={classNames(
-                      active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                      'block w-full px-4 py-2 text-left text-sm'
-                    )}
-                    onClick={() => handleOptionClick('Donor Contact')} // Update selected option
-                  >
-                    Donor Contact
-                  </button>
-                )}
-              </Menu.Item>
-            </form> */}
           </div>
         </Menu.Items>
       </Transition>

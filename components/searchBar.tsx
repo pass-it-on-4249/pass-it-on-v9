@@ -2,10 +2,12 @@
 
 import React from 'react';
 
-export default function SearchBar({query, handleSearchBarInputChange, handleFormSubmit}) {
+export default function SearchBar({searchInput, handleSearchBarInputChange} : {searchInput : any, handleSearchBarInputChange:any}) {
 
     return(
-        <form className="mx-3 max-w-md h-10" onSubmit={handleFormSubmit}>
+        <form 
+            className="mx-3 max-w-md h-10" 
+            onSubmit={ (event : React.FormEvent<HTMLFormElement>) => {event.preventDefault();}}>
         <label
             htmlFor="default-search"
             className="mb-2 text-sm font-medium text-gray-900 sr-only"
@@ -35,7 +37,7 @@ export default function SearchBar({query, handleSearchBarInputChange, handleForm
             id="default-search"
             className="block w-96 p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-full bg-white focus:ring-gray-500 focus:border-gray-500"
             placeholder="Search"
-            value={query}
+            value={searchInput}
             onChange={handleSearchBarInputChange}
             />
         </div>
