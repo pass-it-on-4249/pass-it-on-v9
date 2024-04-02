@@ -6,15 +6,13 @@ export default function Home() {
     <main className="flex flex-col bg-white text-stone-900">
       <div className="flex flex-row justify-center items-start width:990px">
         <div style={{ float: "left", paddingTop: 5 }}>
-          <a href="https://www.passiton.org.sg/">
-            <Image 
+          <Image 
               className="ive_eobj_left ive_clickable" 
               src="/logo.png" 
               alt="Passiton Logo"
               width={150}
               height={80}
-            />
-          </a>
+          />
         </div>
         <div className="flex flex-col justify-end pl-20">
           <div className="flex justify-end">
@@ -36,33 +34,27 @@ export default function Home() {
                 height={61}
               />
             </a>{" "}
-            <a href="https://www.passiton.org.sg/about-us">
-              <Image
-                className="ive_eobj_left ive_clickable padding-right: 2px padding-left: 2px"
-                src="/about_us.png"
-                alt="About Us"
-                width={73}
-                height={61}
-              />
-            </a>{" "}
-            <a href="https://www.passiton.org.sg/grant-a-wish">
-              <Image
+            <Image
+              className="ive_eobj_left ive_clickable padding-right: 2px padding-left: 2px"
+              src="/about_us.png"
+              alt="About Us"
+              width={73}
+              height={61}
+            />{" "}
+            <Image
                 className="ive_eobj_left ive_clickable padding-right: 2px padding-left: 2px"
                 src="/grant_wish.png"
                 alt="Grant a Wish"
                 width={73}
                 height={61}
-              />
-            </a>{" "}
-            <a href="https://www.passiton.org.sg/vwo-list">
-              <Image
+            />{" "}
+            <Image
                 className="ive_eobj_left ive_clickable padding-right: 2px padding-left: 2px"
                 src="/vwo_list.png"
                 alt="VWO List"
                 width={73}
                 height={61}
-              />
-            </a>{" "}
+            />{" "}
             <a href="/items">
               <Image
                 className="ive_eobj_left ive_clickable padding-right: 2px padding-left: 2px"
@@ -72,24 +64,20 @@ export default function Home() {
                 height={61}
               />
             </a>{" "}
-            <a href="https://www.passiton.org.sg/faq">
-              <Image
+            <Image
                 className="ive_eobj_left ive_clickable padding-right: 2px padding-left: 2px"
                 src="/faq.png"
                 alt="FAQ"
                 width={73}
                 height={61}
-              />
-            </a>{" "}
-            <a href="https://www.passiton.org.sg/contact-us">
-              <Image
+            />{" "}
+            <Image
                 className="ive_eobj_left ive_clickable padding-right: 2px padding-left: 2px"
                 src="/contact.png"
                 alt="Contact Us"
                 width={73}
                 height={61}
-              />
-            </a>
+            />
           </div>
         </div>
       </div>
