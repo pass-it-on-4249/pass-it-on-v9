@@ -15,7 +15,7 @@
         ],
         "delivery": true,
         "mainCategory": "Home Furnishing",
-        "subCategory": "Table - study/computer/coffee/side"
+        "subCategory": "Desk"
     },
     {
         "id": "131390",
@@ -33,7 +33,7 @@
         ],
         "delivery": true,
         "mainCategory": "Home Furnishing",
-        "subCategory": "Bed c/w mattress"
+        "subCategory": "Bed"
     },
     {
         "id": "131388",
@@ -63,7 +63,7 @@
         ],
         "delivery": true,
         "mainCategory": "Home Furnishing",
-        "subCategory": "Bed Frame w/o mattress"
+        "subCategory": "Bed"
     },
     {
         "id": "131385",
@@ -79,7 +79,7 @@
         ],
         "delivery": true,
         "mainCategory": "Home Furnishing",
-        "subCategory": "Display/Cabinet/Cupboard/Shelves"
+        "subCategory": "Cabinet"
     },
     {
         "id": "131323",
@@ -128,7 +128,7 @@
         ],
         "delivery": true,
         "mainCategory": "Infant and Children Items",
-        "subCategory": "Baby Cot/Crib w/o mattress"
+        "subCategory": "Baby Cot"
     },
     {
         "id": "131315",
@@ -166,7 +166,7 @@
         ],
         "delivery": true,
         "mainCategory": "Home Furnishing",
-        "subCategory": "Single-size Mattress"
+        "subCategory": "Bed"
     },
     {
         "id": "131363",
@@ -213,7 +213,7 @@
         ],
         "delivery": true,
         "mainCategory": "Home Furnishing",
-        "subCategory": "Display/Cabinet/Cupboard/Shelves"
+        "subCategory": "Cabinet"
     },
     {
         "id": "131327",
@@ -229,7 +229,7 @@
         ],
         "delivery": true,
         "mainCategory": "Home Furnishing",
-        "subCategory": "Sofa - 2 or 3 seaters sofabed"
+        "subCategory": "Sofa"
     },
     {
         "id": "131322",
@@ -245,7 +245,7 @@
         ],
         "delivery": true,
         "mainCategory": "Infant and Children Items",
-        "subCategory": "Infant/Children Toys"
+        "subCategory": "Toys"
     },
     {
         "id": "131319",
@@ -305,13 +305,13 @@
         "id": "131311",
         "image": "script/scraped_data/131311_0.jpg",
         "title": "Single wooden bed frame",
-        "description": "Single bed frame",
+        "description": "Bed",
         "location": [
             ""
         ],
         "delivery": false,
         "mainCategory": "Home Furnishing",
-        "subCategory": "Bed Frame w/o mattress"
+        "subCategory": "Bed"
     },
     {
         "id": "131309",
@@ -326,7 +326,7 @@
         ],
         "delivery": true,
         "mainCategory": "Home Furnishing",
-        "subCategory": "Bed Frame w/o mattress"
+        "subCategory": "Bed"
     },
     {
         "id": "131305",
@@ -398,7 +398,7 @@
         ],
         "delivery": true,
         "mainCategory": "Infant and Children Items",
-        "subCategory": "Infant/Children Toys"
+        "subCategory": "Toys"
     },
     {
         "id": "131251",
@@ -414,7 +414,7 @@
         ],
         "delivery": true,
         "mainCategory": "Home Furnishing",
-        "subCategory": "Table - study/computer/coffee/side"
+        "subCategory": "Table"
     },
     {
         "id": "131245",
@@ -473,7 +473,7 @@
         ],
         "delivery": true,
         "mainCategory": "Home Furnishing",
-        "subCategory": "Bed Frame w/o mattress"
+        "subCategory": "Bed"
     },
     {
         "id": "131301",
@@ -517,7 +517,7 @@
         ],
         "delivery": true,
         "mainCategory": "Infant and Children Items",
-        "subCategory": "Infant/Children Toys"
+        "subCategory": "Toys"
     },
     {
         "id": "131284",
@@ -533,7 +533,7 @@
         ],
         "delivery": true,
         "mainCategory": "Infant and Children Items",
-        "subCategory": "Baby Pram/Stroller"
+        "subCategory": "Stroller"
     },
     {
         "id": "131268",
@@ -547,7 +547,7 @@
         ],
         "delivery": true,
         "mainCategory": "Infant and Children Items",
-        "subCategory": "Infant/Children Toys"
+        "subCategory": "Toys"
     },
     {
         "id": "131248",
@@ -562,7 +562,7 @@
         ],
         "delivery": true,
         "mainCategory": "Home Furnishing",
-        "subCategory": "Table - study/computer/coffee/side"
+        "subCategory": "Table"
     },
     {
         "id": "131224",
@@ -644,7 +644,7 @@
         ],
         "delivery": true,
         "mainCategory": "Infant and Children Items",
-        "subCategory": "Infant/Children Toys"
+        "subCategory": "Toys"
     },
     {
         "id": "131118",
@@ -702,7 +702,7 @@
         ],
         "delivery": true,
         "mainCategory": "Infant and Children Items",
-        "subCategory": "Infant/Children Toys"
+        "subCategory": "Toys"
     },
     {
         "id": "130848",
@@ -828,7 +828,7 @@
         ],
         "delivery": true,
         "mainCategory": "Infant and Children Items",
-        "subCategory": "Infant/Children Toys"
+        "subCategory": "Toys"
     },
     {
         "id": "130883",
@@ -859,7 +859,7 @@
         ],
         "delivery": true,
         "mainCategory": "Leisure and Healthy Lifestyle",
-        "subCategory": "Guitar Piano"
+        "subCategory": "Piano"
     },
     {
         "id": "130760",
@@ -892,7 +892,7 @@
         ],
         "delivery": true,
         "mainCategory": "Infant and Children Items",
-        "subCategory": "Infant/Children Toys"
+        "subCategory": "Toys"
     },
     {
         "id": "130697",
@@ -937,7 +937,7 @@
         ],
         "delivery": true,
         "mainCategory": "Infant and Children Items",
-        "subCategory": "Others"
+        "subCategory": "Toys"
     },
     {
         "id": "130677",
