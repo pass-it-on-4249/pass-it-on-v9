@@ -1,13 +1,14 @@
 import TitleDropdown from "./titleDropdown";
 import SearchBar from "./searchBar";
-import MainCategory from "./mainCategory";
 import SearchButton from "./searchButton";
 import ResetButton from "./resetButton";
 import productData from "@/public/script/scraped_data.json";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import SubCategories from "./subCategories";
+import { tree } from "next/dist/build/templates/app-page";
 
 
-export default function SearchNavMainCategory(
+export default function SearchNavSubCategory(
     {handleUpdateData, handleNoItemsFound, handleLogImplementation}: 
     {handleUpdateData:any, handleNoItemsFound:any, handleLogImplementation:any}) {
 
@@ -19,14 +20,22 @@ export default function SearchNavMainCategory(
 
     // Main Category
     const [selectedMainCategory, setSelectedMainCategory] = useState('Category');
-    const handleMainCategoryOptionClick = (option: React.SetStateAction<string>) => {
+    const handleMainCategoryClick = (option: React.SetStateAction<string>) => {
         setSelectedMainCategory(option);
+        setSelectedSubCategory('');
     };
 
-    // Filters product data based on search bar input and main category
+    // Sub Category
+    const [selectedSubCategory, setSelectedSubCategory] = useState('');
+    const handleSubCategoryClick = (option: React.SetStateAction<string>) => {
+        setSelectedSubCategory(option);
+    };
+
+    // Filters product data based on search bar input, main and sub category
     const getFilteredData = (data:any) => {
         console.log("original data length " + data.length);
         if (searchInput) {
+            console.log("search input " + searchInput);
            // Filter data regardless of order of words in input
             const words = searchInput.toLocaleLowerCase().split(" ");
             data = data.filter((product:any) => {
@@ -36,8 +45,17 @@ export default function SearchNavMainCategory(
         }
 
         if (selectedMainCategory != 'Category') {
+            console.log("selectedMainCategory " + selectedMainCategory);
             data = data.filter((product:any) => {
                 return product.mainCategory == selectedMainCategory;
+            })
+            console.log("data length after main category filter " + data.length);
+        }
+
+        if (selectedSubCategory != '') {
+            console.log("selectedSubCategory " + selectedSubCategory);
+            data = data.filter((product:any) => {
+                return product.subCategory == selectedSubCategory;
             })
             console.log("data length after main category filter " + data.length);
         }
@@ -48,7 +66,7 @@ export default function SearchNavMainCategory(
     const handleSearchButtonClick = () => {
         handleLogImplementation(null, "searchButtonClick", {
             eventName: "searchButtonClick",
-            info: {"searchInput" : searchInput, "mainCategory": selectedMainCategory}
+            info: {"searchInput" : searchInput, "mainCategory": selectedMainCategory, "subCategory": selectedSubCategory}
         })
     }
 
@@ -64,18 +82,21 @@ export default function SearchNavMainCategory(
         handleUpdateData(filteredData);
     }
 
-    const handleResetButtonClick = () => {
+    const handleResetButtonClick = () => {      
         setSearchInput("");
         setSelectedMainCategory('Category');
-    }
+        setSelectedSubCategory('');
+    } 
     
     return (
         <div className="flex flex-row justify-center items-center mt-10">
             <TitleDropdown />
             <SearchBar searchInput={searchInput} handleSearchBarInputChange={handleSearchBarInputChange} />
-            <MainCategory selectedMainCategory={selectedMainCategory} handleMainCategoryOptionClick={handleMainCategoryOptionClick} />
+            <SubCategories 
+                selectedMainCategory={selectedMainCategory} handleMainCategoryClick={handleMainCategoryClick}
+                selectedSubCategory={selectedSubCategory} handleSubCategoryClick={handleSubCategoryClick}/>
             <SearchButton handleSearchButtonClick={handleSearchButtonClick} updateData={updateData}/>
             <ResetButton handleResetButtonClick={handleResetButtonClick} updateData={updateData}/>
-        </div>
+      </div>
     )
 }

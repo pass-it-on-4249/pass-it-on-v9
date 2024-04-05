@@ -14,6 +14,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import SearchNavMainCategory from "@/components/searchNavMainCategory";
 import productData from "@/public/script/scraped_data.json";
 import * as Logging from "@/public/logging/logging";
+import SearchNavSubCategory from "@/components/searchNavSubCategory";
 
 const staggeredWidths = ['240px', '230px', '250px'];
 
@@ -128,10 +129,17 @@ export default function ItemList() {
       </div>
       <ToastContainer />
 
+      {/* SearchNav with only main category filter */}
       <SearchNavMainCategory 
         handleUpdateData={handleUpdateData} 
         handleNoItemsFound={handleNoItemsFound}
         handleLogImplementation={handleLogImplementation}/>
+
+      {/* SearchNav with both main and sub category filter */}
+      {/* <SearchNavSubCategory 
+        handleUpdateData={handleUpdateData} 
+        handleNoItemsFound={handleNoItemsFound}
+        handleLogImplementation={handleLogImplementation}/> */}
       
       <div className="flex flex-row justify-center items-center mt-7">
         <div className="flex flex-row items-center mr-52 ml-4"> 
@@ -218,6 +226,7 @@ export default function ItemList() {
         ))}
       </div>
 
+      {/* Shows up when filtered data's length is zero */}
       <div className="flex flex-col items-center mr-57 ml-4"> 
           <h2 id="no-items-found-text" className="text-sm font-semibold mb-1 text-[#FFFFFF]">
               There is no item found.</h2>
