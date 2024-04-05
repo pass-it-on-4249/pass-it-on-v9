@@ -11,15 +11,27 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import SearchNavMainCategory from "@/components/searchNavMainCategory";
 import productData from "@/public/script/scraped_data.json";
-
+import * as Logging from "@/public/logging/logging";
 
 export default function ItemList() {
   
+  // Product Data
   const [data, setData] = useState(productData);
   const handleUpdateData = (data:any) => {
     setData(data);
   }
 
+  // Log Implementation
+  const handleLogImplementation = (event, customName, customInfo) => {
+    if (event) {
+      console.log("log " + event.type);
+    } else {
+        console.log("log " + customName);
+    }
+    Logging(event, customName, customInfo);
+  }
+
+  // If there is no results from search
   const handleNoItemsFound = (isVisible:boolean) => {
     const noItemsFound = document.getElementById("no-items-found-text")!
     if (isVisible) {
@@ -55,6 +67,7 @@ export default function ItemList() {
             className="flex flex-row items-center justify-end pt-3">
             <a href="/..">
               <Image
+                id="items-page-home-button"
                 className="ive_eobj_left ive_clickable padding-right: 2px padding-left: 2px"
                 src="/home.png"
                 alt="Home"
@@ -111,7 +124,10 @@ export default function ItemList() {
       </div>
       <ToastContainer />
 
-      <SearchNavMainCategory handleUpdateData={handleUpdateData} handleNoItemsFound={handleNoItemsFound}/>
+      <SearchNavMainCategory 
+        handleUpdateData={handleUpdateData} 
+        handleNoItemsFound={handleNoItemsFound}
+        handleLogImplementation={handleLogImplementation}/>
       
       <div className="flex flex-row justify-center items-center mt-7">
         <div className="flex flex-row items-center mr-52 ml-4"> 
@@ -123,7 +139,6 @@ export default function ItemList() {
         </div>
       </div>
       
-      {/* TODO visual bug: when there is no products, there is a weird black divison line*/}
       <div className="flex flex-col justify-center items-center mt-7">
         <div id="product-cards-layout" className="grid grid-cols-3 gap-8" >
           {data.map(product => (

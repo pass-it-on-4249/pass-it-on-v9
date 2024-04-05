@@ -5,35 +5,25 @@ import SearchButton from "./searchButton";
 import ResetButton from "./resetButton";
 import productData from "@/public/script/scraped_data.json";
 import { useState } from "react";
-import * as Logging from "@/public/logging/logging";
-
-function sendCustomEvent2() {
-	console.log('testSearch');
-	Logging(null, 'myevent2', {
-		eventName: 'myeventName',
-		info: {'key1': 'val1', 'input': 'testInput'}
-	});
-}
 
 
-export default function SearchNavMainCategory({handleUpdateData, handleNoItemsFound}: {handleUpdateData:any, handleNoItemsFound:any}) {
-    
-    console.log("load search");
+export default function SearchNavMainCategory(
+    {handleUpdateData, handleNoItemsFound, handleLogImplementation}: 
+    {handleUpdateData:any, handleNoItemsFound:any, handleLogImplementation:any}) {
 
     // Search Bar Input
     const [searchInput, setSearchInput] = useState("");
-
     const handleSearchBarInputChange = (event:any) => {
         setSearchInput(event.target.value)
     };
 
     // Main Category
     const [selectedMainCategory, setSelectedMainCategory] = useState('Category');
-
     const handleMainCategoryOptionClick = (option: React.SetStateAction<string>) => {
         setSelectedMainCategory(option);
     };
 
+    // Filters product data based on search bar input and main category
     const getFilteredData = (data:any) => {
         if (searchInput) {
            // Filter data regardless of order of words in input
@@ -53,7 +43,10 @@ export default function SearchNavMainCategory({handleUpdateData, handleNoItemsFo
     }
 
     const handleSearchButtonClick = () => {
-        sendCustomEvent2();
+        handleLogImplementation(null, "searchButtonClick", {
+            eventName: "searchButtonClick",
+            info: {"searchInput" : searchInput, "mainCategory": selectedMainCategory}
+        })
         updateData();
     }
 
@@ -69,7 +62,7 @@ export default function SearchNavMainCategory({handleUpdateData, handleNoItemsFo
         handleUpdateData(filteredData);
     }
 
-    const resetValues = () => {
+    const handleResetButtonClick = () => {
         setSearchInput("");
         setSelectedMainCategory('Category');
     }
@@ -82,7 +75,7 @@ export default function SearchNavMainCategory({handleUpdateData, handleNoItemsFo
         <SearchBar searchInput={searchInput} handleSearchBarInputChange={handleSearchBarInputChange} />
         <MainCategory selectedMainCategory={selectedMainCategory} handleMainCategoryOptionClick={handleMainCategoryOptionClick} />
         <SearchButton handleSearchButtonClick={handleSearchButtonClick}/>
-        <ResetButton handleResetButtonClick={resetValues}/>
+        <ResetButton handleResetButtonClick={handleResetButtonClick}/>
       </div>
     )
 }
