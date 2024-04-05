@@ -25,18 +25,21 @@ export default function SearchNavMainCategory(
 
     // Filters product data based on search bar input and main category
     const getFilteredData = (data:any) => {
+        console.log("original data length " + data.length);
         if (searchInput) {
            // Filter data regardless of order of words in input
             const words = searchInput.toLocaleLowerCase().split(" ");
             data = data.filter((product:any) => {
                 return words.every((word:any) => product.title.toLocaleLowerCase().includes(word))
             }); 
+            console.log("data length after input filter " + data.length);
         }
 
         if (selectedMainCategory != 'Category') {
             data = data.filter((product:any) => {
                 return product.mainCategory == selectedMainCategory;
             })
+            console.log("data length after main category filter " + data.length);
         }
 
         return data;

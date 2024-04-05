@@ -207,15 +207,20 @@ export default function ItemList() {
           </div> */}
 
       <div className="flex flex-wrap justify-center items-center mt-7 gap-6">
-        {Array.from({ length: Math.ceil(productData.length / 3) }).map((_, rowIndex) => (
+        {Array.from({ length: Math.ceil(data.length / 3) }).map((_, rowIndex) => (
           <div key={rowIndex} className="flex justify-center items-center gap-10">
-            {productData.slice(rowIndex * 3, (rowIndex + 1) * 3).map((product, index) => (
+            {data.slice(rowIndex * 3, (rowIndex + 1) * 3).map((product, index) => (
               <div key={product.id} className="px-2" style={{ width: staggeredWidths[index % staggeredWidths.length] }}>
                 <ProductCardStaggered product={product} width={staggeredWidths[index % staggeredWidths.length]} />
               </div>
             ))}
           </div>
         ))}
+      </div>
+
+      <div className="flex flex-col items-center mr-57 ml-4"> 
+          <h2 id="no-items-found-text" className="text-sm font-semibold mb-1 text-[#FFFFFF]">
+              There is no item found.</h2>
       </div>
 
 
