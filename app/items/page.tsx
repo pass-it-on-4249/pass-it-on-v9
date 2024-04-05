@@ -2,36 +2,61 @@
 
 import Image from "next/image";
 import React from "react";
-import Dropdown from "@/components/dropdowns";
-import SearchBar from "@/components/searchBar";
-import Category from "@/components/category";
-import SearchButton from "@/components/searchButton";
-import ResetButton from "@/components/resetButton";
+import { useState } from "react";
+
 import PageNav from "@/components/pageNav";
 import ProductCard from "@/components/productCard";
 import ProductCardStaggered from "@/components/productCardStaggered";
 import MasonryLayout from "@/components/masonryLayout";
 import { ShoppingCartIcon } from '@heroicons/react/20/solid';
-import productData from "@/public/script/scraped_data.json";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import SearchNavMainCategory from "@/components/searchNavMainCategory";
+import productData from "@/public/script/scraped_data.json";
+import * as Logging from "@/public/logging/logging";
 
 const staggeredWidths = ['240px', '230px', '250px'];
 
 export default function ItemList() {
+  
+  // Product Data
+  const [data, setData] = useState(productData);
+  const handleUpdateData = (data:any) => {
+    setData(data);
+  }
+
+  // Log Implementation
+  const handleLogImplementation = (event, customName, customInfo) => {
+    if (event) {
+      console.log("log " + event.type);
+    } else {
+        console.log("log " + customName);
+    }
+    Logging(event, customName, customInfo);
+  }
+
+  // If there is no results from search
+  const handleNoItemsFound = (isVisible:boolean) => {
+    const noItemsFound = document.getElementById("no-items-found-text")!
+    if (isVisible) {
+      noItemsFound.style.display = "block";
+      noItemsFound.style.color = "#000000";
+    } else {
+      noItemsFound.style.display = "none";
+    }
+  }
+
   return (
     <main className="flex flex-col bg-white text-stone-900">
       <div className="flex flex-row justify-center items-start width:990px">
         <div style={{ float: "left", paddingTop: 5 }}>
-          <a href="https://www.passiton.org.sg/">
-            <Image 
+          <Image 
               className="ive_eobj_left ive_clickable" 
               src="/logo.png" 
               alt="Passiton Logo"
               width={150}
               height={80}
-            />
-          </a>
+          />
         </div>
         <div className="flex flex-col justify-end pl-20">
           <div className="flex justify-end">
@@ -46,6 +71,7 @@ export default function ItemList() {
             className="flex flex-row items-center justify-end pt-3">
             <a href="/..">
               <Image
+                id="items-page-home-button"
                 className="ive_eobj_left ive_clickable padding-right: 2px padding-left: 2px"
                 src="/home.png"
                 alt="Home"
@@ -53,33 +79,27 @@ export default function ItemList() {
                 height={61}
               />
             </a>{" "}
-            <a href="https://www.passiton.org.sg/about-us">
-              <Image
+            <Image
                 className="ive_eobj_left ive_clickable padding-right: 2px padding-left: 2px"
                 src="/about_us.png"
                 alt="About Us"
                 width={73}
                 height={61}
-              />
-            </a>{" "}
-            <a href="https://www.passiton.org.sg/grant-a-wish">
-              <Image
+            />{" "}
+            <Image
                 className="ive_eobj_left ive_clickable padding-right: 2px padding-left: 2px"
                 src="/grant_wish.png"
                 alt="Grant a Wish"
                 width={73}
                 height={61}
-              />
-            </a>{" "}
-            <a href="https://www.passiton.org.sg/vwo-list">
-              <Image
+            />{" "}
+            <Image
                 className="ive_eobj_left ive_clickable padding-right: 2px padding-left: 2px"
                 src="/vwo_list.png"
                 alt="VWO List"
                 width={73}
                 height={61}
-              />
-            </a>{" "}
+            />{" "}
             <a href="/items">
               <Image
                 className="ive_eobj_left ive_clickable padding-right: 2px padding-left: 2px"
@@ -89,35 +109,30 @@ export default function ItemList() {
                 height={61}
               />
             </a>{" "}
-            <a href="https://www.passiton.org.sg/faq">
-              <Image
+            <Image
                 className="ive_eobj_left ive_clickable padding-right: 2px padding-left: 2px"
                 src="/faq.png"
                 alt="FAQ"
                 width={73}
                 height={61}
-              />
-            </a>{" "}
-            <a href="https://www.passiton.org.sg/contact-us">
-              <Image
+            />{" "}
+            <Image
                 className="ive_eobj_left ive_clickable padding-right: 2px padding-left: 2px"
                 src="/contact.png"
                 alt="Contact Us"
                 width={73}
                 height={61}
-              />
-            </a>
+            />
           </div>
         </div>
       </div>
       <ToastContainer />
-      <div className="flex flex-row justify-center items-center mt-10">
-        <Dropdown />
-        <SearchBar />
-        <Category />
-        <SearchButton />
-        <ResetButton />
-      </div>
+
+      <SearchNavMainCategory 
+        handleUpdateData={handleUpdateData} 
+        handleNoItemsFound={handleNoItemsFound}
+        handleLogImplementation={handleLogImplementation}/>
+      
       <div className="flex flex-row justify-center items-center mt-7">
         <div className="flex flex-row items-center mr-52 ml-4"> 
           <div className="text-[#2BA41D] font-semibold pr-2">My Cart</div>
@@ -127,6 +142,19 @@ export default function ItemList() {
           <PageNav />
         </div>
       </div>
+
+      {/* <div className="flex flex-col justify-center items-center mt-7">
+        <div id="product-cards-layout" className="grid grid-cols-3 gap-8" >
+          {data.map(product => (
+             <ProductCard product={product} />
+          ))}
+        </div>
+
+        <div className="flex flex-col items-center mr-57 ml-4"> 
+          <h2 id="no-items-found-text" className="text-sm font-semibold mb-1 text-[#FFFFFF]">
+              There is no item found.</h2>
+        </div>
+      </div> */}
       
       {/* <div className="flex justify-center items-center mt-7 grid-cols-4 gap-2 mx-px"> */}
         {/*Modular ProductCard  */}
@@ -178,17 +206,22 @@ export default function ItemList() {
             ))}
           </div> */}
 
-<div className="flex flex-wrap justify-center items-center mt-7 gap-6">
-  {Array.from({ length: Math.ceil(productData.length / 3) }).map((_, rowIndex) => (
-    <div key={rowIndex} className="flex justify-center items-center gap-10">
-      {productData.slice(rowIndex * 3, (rowIndex + 1) * 3).map((product, index) => (
-        <div key={product.id} className="px-2" style={{ width: staggeredWidths[index % staggeredWidths.length] }}>
-          <ProductCardStaggered product={product} width={staggeredWidths[index % staggeredWidths.length]} />
-        </div>
-      ))}
-    </div>
-  ))}
-</div>
+      <div className="flex flex-wrap justify-center items-center mt-7 gap-6">
+        {Array.from({ length: Math.ceil(data.length / 3) }).map((_, rowIndex) => (
+          <div key={rowIndex} className="flex justify-center items-center gap-10">
+            {data.slice(rowIndex * 3, (rowIndex + 1) * 3).map((product, index) => (
+              <div key={product.id} className="px-2" style={{ width: staggeredWidths[index % staggeredWidths.length] }}>
+                <ProductCardStaggered product={product} width={staggeredWidths[index % staggeredWidths.length]} />
+              </div>
+            ))}
+          </div>
+        ))}
+      </div>
+
+      <div className="flex flex-col items-center mr-57 ml-4"> 
+          <h2 id="no-items-found-text" className="text-sm font-semibold mb-1 text-[#FFFFFF]">
+              There is no item found.</h2>
+      </div>
 
 
         {/* <div className="mt-10">
@@ -198,6 +231,7 @@ export default function ItemList() {
         {/* </div> */}
       {/* </div> */}
     </main>
+    
   );
 }
 

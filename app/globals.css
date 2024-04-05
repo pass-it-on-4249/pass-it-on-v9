@@ -16,14 +16,10 @@
   }
 }
 
-body {
+html, body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: var(--foreground-rgb);
+  height: 100%;
 }
 
 @layer utilities {

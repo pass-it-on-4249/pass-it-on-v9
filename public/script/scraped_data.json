@@ -13,7 +13,9 @@
             "Thomson",
             "Watten Estate"
         ],
-        "delivery": true
+        "delivery": true,
+        "mainCategory": "Home Furnishing",
+        "subCategory": "Desk"
     },
     {
         "id": "131390",
@@ -29,7 +31,9 @@
             "Meyer",
             "Tanjong Rhu"
         ],
-        "delivery": true
+        "delivery": true,
+        "mainCategory": "Home Furnishing",
+        "subCategory": "Bed"
     },
     {
         "id": "131388",
@@ -40,7 +44,9 @@
             "Balestier",
             "Toa Payoh"
         ],
-        "delivery": true
+        "delivery": true,
+        "mainCategory": "Leisure and Healthy Lifestyle",
+        "subCategory": "Exercise Equipment"
     },
     {
         "id": "131340",
@@ -55,7 +61,9 @@
             "Kew Drive",
             "Upper East Coast"
         ],
-        "delivery": true
+        "delivery": true,
+        "mainCategory": "Home Furnishing",
+        "subCategory": "Bed"
     },
     {
         "id": "131385",
@@ -69,7 +77,9 @@
             "Dairy Farm",
             "Hillview"
         ],
-        "delivery": true
+        "delivery": true,
+        "mainCategory": "Home Furnishing",
+        "subCategory": "Cabinet"
     },
     {
         "id": "131323",
@@ -82,7 +92,9 @@
             "Woodgrove",
             "Woodlands"
         ],
-        "delivery": true
+        "delivery": true,
+        "mainCategory": "Kitchen Utility Items",
+        "subCategory": "Cups/Bowls/Saucers"
     },
     {
         "id": "131321",
@@ -96,7 +108,9 @@
             "Dairy Farm",
             "Hillview"
         ],
-        "delivery": true
+        "delivery": true,
+        "mainCategory": "Infant and Children Items",
+        "subCategory": "Baby Chair"
     },
     {
         "id": "131318",
@@ -112,7 +126,9 @@
             "Orchard Boulevard",
             "Tanglin"
         ],
-        "delivery": true
+        "delivery": true,
+        "mainCategory": "Infant and Children Items",
+        "subCategory": "Baby Cot"
     },
     {
         "id": "131315",
@@ -122,7 +138,9 @@
         "location": [
             ""
         ],
-        "delivery": false
+        "delivery": false,
+        "mainCategory": "Attires / Clothings",
+        "subCategory": "Adult (Uni) shirts/pants/casual"
     },
     {
         "id": "131313",
@@ -132,7 +150,9 @@
         "location": [
             ""
         ],
-        "delivery": false
+        "delivery": false,
+        "mainCategory": "Attires / Clothings",
+        "subCategory": "Adult (Uni) shirts/pants/casual"
     },
     {
         "id": "131392",
@@ -144,7 +164,9 @@
             "Macpherson",
             "Potong Pasir"
         ],
-        "delivery": true
+        "delivery": true,
+        "mainCategory": "Home Furnishing",
+        "subCategory": "Bed"
     },
     {
         "id": "131363",
@@ -158,7 +180,9 @@
             "Dairy Farm",
             "Hillview"
         ],
-        "delivery": true
+        "delivery": true,
+        "mainCategory": "Home Furnishing",
+        "subCategory": "Dining Table"
     },
     {
         "id": "131350",
@@ -171,7 +195,9 @@
             "Braddell",
             "Thomson"
         ],
-        "delivery": true
+        "delivery": true,
+        "mainCategory": "Infant and Children Items",
+        "subCategory": "Playpen"
     },
     {
         "id": "131384",
@@ -185,7 +211,9 @@
             "Dairy Farm",
             "Hillview"
         ],
-        "delivery": true
+        "delivery": true,
+        "mainCategory": "Home Furnishing",
+        "subCategory": "Cabinet"
     },
     {
         "id": "131327",
@@ -199,7 +227,9 @@
             "Dairy Farm",
             "Hillview"
         ],
-        "delivery": true
+        "delivery": true,
+        "mainCategory": "Home Furnishing",
+        "subCategory": "Sofa"
     },
     {
         "id": "131322",
@@ -213,7 +243,9 @@
             "Dairy Farm",
             "Hillview"
         ],
-        "delivery": true
+        "delivery": true,
+        "mainCategory": "Infant and Children Items",
+        "subCategory": "Toys"
     },
     {
         "id": "131319",
@@ -226,7 +258,9 @@
             "Braddell",
             "Thomson"
         ],
-        "delivery": true
+        "delivery": true,
+        "mainCategory": "Leisure and Healthy Lifestyle",
+        "subCategory": "Others"
     },
     {
         "id": "131316",
@@ -239,7 +273,9 @@
             "Sengkang",
             "Serangoon Garden"
         ],
-        "delivery": true
+        "delivery": true,
+        "mainCategory": "Electrical Home Appliances",
+        "subCategory": "Others"
     },
     {
         "id": "131314",
@@ -249,7 +285,9 @@
         "location": [
             ""
         ],
-        "delivery": false
+        "delivery": false,
+        "mainCategory": "Attires / Clothings",
+        "subCategory": "Children (Uni) shirts/pants/casual"
     },
     {
         "id": "131312",
@@ -259,17 +297,21 @@
         "location": [
             ""
         ],
-        "delivery": false
+        "delivery": false,
+        "mainCategory": "Attires / Clothings",
+        "subCategory": "Adult (Uni) shirts/pants/casual"
     },
     {
         "id": "131311",
         "image": "script/scraped_data/131311_0.jpg",
         "title": "Single wooden bed frame",
-        "description": "Single bed frame",
+        "description": "Bed",
         "location": [
             ""
         ],
-        "delivery": false
+        "delivery": false,
+        "mainCategory": "Home Furnishing",
+        "subCategory": "Bed"
     },
     {
         "id": "131309",
@@ -282,7 +324,9 @@
             "Braddell",
             "Thomson"
         ],
-        "delivery": true
+        "delivery": true,
+        "mainCategory": "Home Furnishing",
+        "subCategory": "Bed"
     },
     {
         "id": "131305",
@@ -292,7 +336,9 @@
         "location": [
             ""
         ],
-        "delivery": false
+        "delivery": false,
+        "mainCategory": "Electrical Home Appliances",
+        "subCategory": "Others"
     },
     {
         "id": "131300",
@@ -306,7 +352,9 @@
             "Dairy Farm",
             "Hillview"
         ],
-        "delivery": true
+        "delivery": true,
+        "mainCategory": "Infant and Children Items",
+        "subCategory": "Others"
     },
     {
         "id": "131298",
@@ -319,7 +367,9 @@
             "Sengkang",
             "Serangoon Garden"
         ],
-        "delivery": true
+        "delivery": true,
+        "mainCategory": "Others",
+        "subCategory": "Others"
     },
     {
         "id": "131296",
@@ -332,7 +382,9 @@
             "Sengkang",
             "Serangoon Garden"
         ],
-        "delivery": true
+        "delivery": true,
+        "mainCategory": "Infant and Children Items",
+        "subCategory": "Others"
     },
     {
         "id": "131270",
@@ -344,7 +396,9 @@
             "Simei",
             "Tampines"
         ],
-        "delivery": true
+        "delivery": true,
+        "mainCategory": "Infant and Children Items",
+        "subCategory": "Toys"
     },
     {
         "id": "131251",
@@ -358,7 +412,9 @@
             "Dairy Farm",
             "Hillview"
         ],
-        "delivery": true
+        "delivery": true,
+        "mainCategory": "Home Furnishing",
+        "subCategory": "Table"
     },
     {
         "id": "131245",
@@ -371,7 +427,9 @@
             "Woodgrove",
             "Woodlands"
         ],
-        "delivery": true
+        "delivery": true,
+        "mainCategory": "Electrical Home Appliances",
+        "subCategory": "Electric Kettle"
     },
     {
         "id": "131222",
@@ -381,7 +439,9 @@
         "location": [
             ""
         ],
-        "delivery": false
+        "delivery": false,
+        "mainCategory": "Others",
+        "subCategory": "Others"
     },
     {
         "id": "131310",
@@ -394,7 +454,9 @@
             "Braddell",
             "Thomson"
         ],
-        "delivery": true
+        "delivery": true,
+        "mainCategory": "Home Furnishing",
+        "subCategory": "Wardrobe"
     },
     {
         "id": "131308",
@@ -409,7 +471,9 @@
             "Pasir Panjang",
             "West Coast"
         ],
-        "delivery": true
+        "delivery": true,
+        "mainCategory": "Home Furnishing",
+        "subCategory": "Bed"
     },
     {
         "id": "131301",
@@ -421,7 +485,9 @@
             "Simei",
             "Tampines"
         ],
-        "delivery": true
+        "delivery": true,
+        "mainCategory": "Attires / Clothings",
+        "subCategory": "Others"
     },
     {
         "id": "131299",
@@ -434,7 +500,9 @@
             "Sengkang",
             "Serangoon Garden"
         ],
-        "delivery": true
+        "delivery": true,
+        "mainCategory": "Infant and Children Items",
+        "subCategory": "Others"
     },
     {
         "id": "131297",
@@ -447,7 +515,9 @@
             "Sengkang",
             "Serangoon Garden"
         ],
-        "delivery": true
+        "delivery": true,
+        "mainCategory": "Infant and Children Items",
+        "subCategory": "Toys"
     },
     {
         "id": "131284",
@@ -461,7 +531,9 @@
             "Dairy Farm",
             "Hillview"
         ],
-        "delivery": true
+        "delivery": true,
+        "mainCategory": "Infant and Children Items",
+        "subCategory": "Stroller"
     },
     {
         "id": "131268",
@@ -473,7 +545,9 @@
             "Simei",
             "Tampines"
         ],
-        "delivery": true
+        "delivery": true,
+        "mainCategory": "Infant and Children Items",
+        "subCategory": "Toys"
     },
     {
         "id": "131248",
@@ -486,7 +560,9 @@
             "Sengkang",
             "Serangoon Garden"
         ],
-        "delivery": true
+        "delivery": true,
+        "mainCategory": "Home Furnishing",
+        "subCategory": "Table"
     },
     {
         "id": "131224",
@@ -499,7 +575,9 @@
             "Redhill",
             "Tiong Bahru"
         ],
-        "delivery": true
+        "delivery": true,
+        "mainCategory": "Medical Aids",
+        "subCategory": "Others"
     },
     {
         "id": "131220",
@@ -509,7 +587,9 @@
         "location": [
             ""
         ],
-        "delivery": false
+        "delivery": false,
+        "mainCategory": "Electrical Home Appliances",
+        "subCategory": "Blender"
     },
     {
         "id": "131219",
@@ -519,7 +599,9 @@
         "location": [
             ""
         ],
-        "delivery": false
+        "delivery": false,
+        "mainCategory": "Electrical Home Appliances",
+        "subCategory": "Food Mixer"
     },
     {
         "id": "131190",
@@ -533,7 +615,9 @@
             "Dairy Farm",
             "Hillview"
         ],
-        "delivery": true
+        "delivery": true,
+        "mainCategory": "Attires / Clothings",
+        "subCategory": "Adult (Uni) shirts/pants/casual"
     },
     {
         "id": "131159",
@@ -543,7 +627,9 @@
         "location": [
             ""
         ],
-        "delivery": false
+        "delivery": false,
+        "mainCategory": "Home Furnishing",
+        "subCategory": "Chairs"
     },
     {
         "id": "131147",
@@ -556,7 +642,9 @@
             "Sentosa",
             "Telok Blangah"
         ],
-        "delivery": true
+        "delivery": true,
+        "mainCategory": "Infant and Children Items",
+        "subCategory": "Toys"
     },
     {
         "id": "131118",
@@ -567,7 +655,9 @@
             "Balestier",
             "Toa Payoh"
         ],
-        "delivery": true
+        "delivery": true,
+        "mainCategory": "Attires / Clothings",
+        "subCategory": "Teenage (Male) shirts/pants/casual"
     },
     {
         "id": "131050",
@@ -580,7 +670,9 @@
             "Sengkang",
             "Serangoon Garden"
         ],
-        "delivery": true
+        "delivery": true,
+        "mainCategory": "Others",
+        "subCategory": "Others"
     },
     {
         "id": "131204",
@@ -593,7 +685,9 @@
             "Braddell",
             "Thomson"
         ],
-        "delivery": true
+        "delivery": true,
+        "mainCategory": "Mobility Aids",
+        "subCategory": "Hospital Bed"
     },
     {
         "id": "131040",
@@ -606,7 +700,9 @@
             "Sengkang",
             "Serangoon Garden"
         ],
-        "delivery": true
+        "delivery": true,
+        "mainCategory": "Infant and Children Items",
+        "subCategory": "Toys"
     },
     {
         "id": "130848",
@@ -618,7 +714,9 @@
             "Macpherson",
             "Potong Pasir"
         ],
-        "delivery": true
+        "delivery": true,
+        "mainCategory": "Medical Aids",
+        "subCategory": "Others"
     },
     {
         "id": "130762",
@@ -632,7 +730,9 @@
             "Dairy Farm",
             "Hillview"
         ],
-        "delivery": true
+        "delivery": true,
+        "mainCategory": "Learning Aids",
+        "subCategory": "Others"
     },
     {
         "id": "131218",
@@ -642,7 +742,9 @@
         "location": [
             ""
         ],
-        "delivery": false
+        "delivery": false,
+        "mainCategory": "Electrical Home Appliances",
+        "subCategory": "Food Mixer"
     },
     {
         "id": "131188",
@@ -653,7 +755,9 @@
             "Balestier",
             "Toa Payoh"
         ],
-        "delivery": true
+        "delivery": true,
+        "mainCategory": "Others",
+        "subCategory": "Others"
     },
     {
         "id": "131154",
@@ -663,7 +767,9 @@
         "location": [
             ""
         ],
-        "delivery": false
+        "delivery": false,
+        "mainCategory": "Infant and Children Items",
+        "subCategory": "Others"
     },
     {
         "id": "131142",
@@ -675,7 +781,9 @@
             "Sembawang",
             "Yishun"
         ],
-        "delivery": true
+        "delivery": true,
+        "mainCategory": "Leisure and Healthy Lifestyle",
+        "subCategory": "Exercise Equipment"
     },
     {
         "id": "131066",
@@ -688,7 +796,9 @@
             "Braddell",
             "Thomson"
         ],
-        "delivery": true
+        "delivery": true,
+        "mainCategory": "Medical Aids",
+        "subCategory": "Others"
     },
     {
         "id": "131048",
@@ -701,7 +811,9 @@
             "Braddell",
             "Thomson"
         ],
-        "delivery": true
+        "delivery": true,
+        "mainCategory": "Medical Aids",
+        "subCategory": "Others"
     },
     {
         "id": "131041",
@@ -714,7 +826,9 @@
             "Sengkang",
             "Serangoon Garden"
         ],
-        "delivery": true
+        "delivery": true,
+        "mainCategory": "Infant and Children Items",
+        "subCategory": "Toys"
     },
     {
         "id": "130883",
@@ -725,7 +839,9 @@
             "Seletar",
             "Yio Chu Kang"
         ],
-        "delivery": true
+        "delivery": true,
+        "mainCategory": "Electrical Home Appliances",
+        "subCategory": "Blender"
     },
     {
         "id": "130787",
@@ -741,7 +857,9 @@
             "Meyer",
             "Tanjong Rhu"
         ],
-        "delivery": true
+        "delivery": true,
+        "mainCategory": "Leisure and Healthy Lifestyle",
+        "subCategory": "Piano"
     },
     {
         "id": "130760",
@@ -755,7 +873,9 @@
             "Dairy Farm",
             "Hillview"
         ],
-        "delivery": true
+        "delivery": true,
+        "mainCategory": "Attires / Clothings",
+        "subCategory": "Others"
     },
     {
         "id": "130721",
@@ -770,7 +890,9 @@
             "Kew Drive",
             "Upper East Coast"
         ],
-        "delivery": true
+        "delivery": true,
+        "mainCategory": "Infant and Children Items",
+        "subCategory": "Toys"
     },
     {
         "id": "130697",
@@ -782,7 +904,9 @@
             "Macpherson",
             "Potong Pasir"
         ],
-        "delivery": true
+        "delivery": true,
+        "mainCategory": "Medical Aids",
+        "subCategory": "Others"
     },
     {
         "id": "130597",
@@ -794,7 +918,9 @@
             "Simei",
             "Tampines"
         ],
-        "delivery": true
+        "delivery": true,
+        "mainCategory": "Mobility Aids",
+        "subCategory": "Hospital Bed"
     },
     {
         "id": "130720",
@@ -809,7 +935,9 @@
             "Kew Drive",
             "Upper East Coast"
         ],
-        "delivery": true
+        "delivery": true,
+        "mainCategory": "Infant and Children Items",
+        "subCategory": "Toys"
     },
     {
         "id": "130677",
@@ -822,7 +950,9 @@
             "Braddell",
             "Thomson"
         ],
-        "delivery": true
+        "delivery": true,
+        "mainCategory": "Others",
+        "subCategory": "Others"
     },
     {
         "id": "130967",
@@ -835,6 +965,8 @@
             "Sentosa",
             "Telok Blangah"
         ],
-        "delivery": true
+        "delivery": true,
+        "mainCategory": "Mobility Aids",
+        "subCategory": "Hospital Bed"
     }
 ]
