@@ -5,10 +5,21 @@ import SearchButton from "./searchButton";
 import ResetButton from "./resetButton";
 import productData from "@/public/script/scraped_data.json";
 import { useState } from "react";
+import * as Logging from "@/public/logging/logging";
+
+function sendCustomEvent2() {
+	console.log('testSearch');
+	Logging(null, 'myevent2', {
+		eventName: 'myeventName',
+		info: {'key1': 'val1', 'input': 'testInput'}
+	});
+}
 
 
 export default function SearchNavMainCategory({handleUpdateData, handleNoItemsFound}: {handleUpdateData:any, handleNoItemsFound:any}) {
     
+    console.log("load search");
+
     // Search Bar Input
     const [searchInput, setSearchInput] = useState("");
 
@@ -41,6 +52,11 @@ export default function SearchNavMainCategory({handleUpdateData, handleNoItemsFo
         return data;
     }
 
+    const handleSearchButtonClick = () => {
+        sendCustomEvent2();
+        updateData();
+    }
+
     const updateData = () => {
         let filteredData = getFilteredData(productData);
         
@@ -60,10 +76,12 @@ export default function SearchNavMainCategory({handleUpdateData, handleNoItemsFo
     
     return (
         <div className="flex flex-row justify-center items-center mt-10">
+            
+
         <TitleDropdown />
         <SearchBar searchInput={searchInput} handleSearchBarInputChange={handleSearchBarInputChange} />
         <MainCategory selectedMainCategory={selectedMainCategory} handleMainCategoryOptionClick={handleMainCategoryOptionClick} />
-        <SearchButton handleSearchButtonClick={updateData}/>
+        <SearchButton handleSearchButtonClick={handleSearchButtonClick}/>
         <ResetButton handleResetButtonClick={resetValues}/>
       </div>
     )
