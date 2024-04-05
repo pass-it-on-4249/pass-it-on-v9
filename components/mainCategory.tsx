@@ -10,13 +10,7 @@ function classNames(...classes: string[]) {
 }
 
 export default function MainCategory({selectedMainCategory, handleMainCategoryOptionClick} : {selectedMainCategory:any, handleMainCategoryOptionClick:any}) {
-  // const [selectedOption, setSelectedOption] = useState('Category');
-
-  // const handleOptionClick = (option: React.SetStateAction<string>) => {
-  //   setSelectedOption(option);
-  // };
-
-
+  
   return (
     <Menu as="div" className="relative inline-block text-left">
       <div>
