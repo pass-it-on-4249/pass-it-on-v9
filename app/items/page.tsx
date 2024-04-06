@@ -7,13 +7,11 @@ import { useState } from "react";
 import PageNav from "@/components/pageNav";
 import ProductCard from "@/components/productCard";
 import ProductCardStaggered from "@/components/productCardStaggered";
-import MasonryLayout from "@/components/masonryLayout";
 import { ShoppingCartIcon } from '@heroicons/react/20/solid';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import SearchNavMainCategory from "@/components/searchNavMainCategory";
 import productData from "@/public/script/scraped_data.json";
-import * as Logging from "@/public/logging/logging";
 import SearchNavSubCategory from "@/components/searchNavSubCategory";
 
 const staggeredWidths = ['240px', '230px', '250px'];
@@ -27,13 +25,12 @@ export default function ItemList() {
   }
 
   // Log Implementation
-  const handleLogImplementation = (event, customName, customInfo) => {
+  const handleLogImplementation = (event: { type: string; }, customName: string, customInfo: any) => {
     if (event) {
       console.log("log " + event.type);
     } else {
         console.log("log " + customName);
     }
-    Logging(event, customName, customInfo);
   }
 
   // If there is no results from search
@@ -48,7 +45,7 @@ export default function ItemList() {
   }
 
   return (
-    <main className="flex flex-col bg-white text-stone-900">
+    <main className="flex flex-col bg-white text-stone-900 mb-20">
       <div className="flex flex-row justify-center items-start width:990px">
         <div style={{ float: "left", paddingTop: 5 }}>
           <Image 
@@ -103,6 +100,7 @@ export default function ItemList() {
             />{" "}
             <a href="/items">
               <Image
+                id="items-page-item-list-button"
                 className="ive_eobj_left ive_clickable padding-right: 2px padding-left: 2px"
                 src="/item_list.png"
                 alt="Item List"
@@ -151,79 +149,14 @@ export default function ItemList() {
         </div>
       </div>
 
-      {/* <div className="flex flex-col justify-center items-center mt-7">
-        <div id="product-cards-layout" className="grid grid-cols-3 gap-8" >
-          {data.map(product => (
-             <ProductCard product={product} />
+      <div className="flex flex-row justify-center items-center mt-7">
+        <div className="grid grid-cols-3 gap-8">
+          {data.map((product, index) => (
+            <React.Fragment key={product.id}>
+              <ProductCard product={product} />
+            </React.Fragment>
           ))}
         </div>
-
-        <div className="flex flex-col items-center mr-57 ml-4"> 
-          <h2 id="no-items-found-text" className="text-sm font-semibold mb-1 text-[#FFFFFF]">
-              There is no item found.</h2>
-        </div>
-      </div> */}
-      
-      {/* <div className="flex justify-center items-center mt-7 grid-cols-4 gap-2 mx-px"> */}
-        {/*Modular ProductCard  */}
-        {/* <div className="grid grid-cols-3 gap-8">
-          {productData.map(product => (
-             <ProductCard product={product} />
-          ))}
-        </div> */}
-
-        {/* <div className="mt-7"> */}
-          
-            {/* <div className="grid grid-cols-4 gap-2"> */}
-            {/* {productData.map((product, index) => (
-              <div key={product.id} className="justify-center">
-                  <ProductCardStaggered product={product} width={staggeredWidths[index % staggeredWidths.length]} />
-              </div>
-            ))} */}
-          {/* <div className="flex justify-center items-center mt-7">
-            {productData.map((product, index) => (
-              <ProductCardStaggered
-                key={product.id}
-                product={product}
-                width={staggeredWidths[index % staggeredWidths.length]}
-              />
-            ))}
-          </div> */}
-
-          {/* <div className="flex flex-wrap justify-center items-center mt-7 gap-6">
-            <ProductCardStaggered productData={productData} />
-          </div> */}
-
-          {/* <div className="flex flex-wrap justify-center items-center mt-7 gap-6">
-            {productData.map((product, index) => (
-              <div key={product.id} className="px-2" style={{ width: staggeredWidths[index % staggeredWidths.length] }}>
-                <ProductCardStaggered product={product} width={staggeredWidths[index % staggeredWidths.length]} />
-              </div>
-            ))}
-          </div> */}
-
-          {/* <div className="flex flex-wrap justify-center items-center mt-7 gap-6">
-            {Array.from({ length: Math.ceil(productData.length / 4) }).map((_, rowIndex) => (
-              <div key={rowIndex} className="flex justify-center items-center gap-6">
-                {productData.slice(rowIndex * 4, (rowIndex + 1) * 4).map((product, index) => (
-                  <div key={product.id} className="px-2" style={{ width: staggeredWidths[index % staggeredWidths.length] }}>
-                    <ProductCardStaggered product={product} width={staggeredWidths[index % staggeredWidths.length]} />
-                  </div>
-                ))}
-              </div>
-            ))}
-          </div> */}
-
-      <div className="flex flex-wrap justify-center items-center mt-7 gap-6">
-        {Array.from({ length: Math.ceil(data.length / 3) }).map((_, rowIndex) => (
-          <div key={rowIndex} className="flex justify-center items-center gap-10">
-            {data.slice(rowIndex * 3, (rowIndex + 1) * 3).map((product, index) => (
-              <div key={product.id} className="px-2" style={{ width: staggeredWidths[index % staggeredWidths.length] }}>
-                <ProductCardStaggered product={product} width={staggeredWidths[index % staggeredWidths.length]} />
-              </div>
-            ))}
-          </div>
-        ))}
       </div>
 
       {/* Shows up when filtered data's length is zero */}
@@ -231,16 +164,7 @@ export default function ItemList() {
           <h2 id="no-items-found-text" className="text-sm font-semibold mb-1 text-[#FFFFFF]">
               There is no item found.</h2>
       </div>
-
-
-        {/* <div className="mt-10">
-          <MasonryLayout productData={productData} />
-        </div> */}
-
-        {/* </div> */}
-      {/* </div> */}
-    </main>
-    
+    </main>    
   );
 }
 

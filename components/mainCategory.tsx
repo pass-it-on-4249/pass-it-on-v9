@@ -14,7 +14,7 @@ export default function MainCategory({selectedMainCategory, handleMainCategoryOp
   return (
     <Menu as="div" className="relative inline-block text-left">
       <div>
-        <Menu.Button className="inline-flex w-full justify-center h-10 items-center gap-x-1.5 rounded-full bg-white px-3 py-2 text-sm font-medium text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
+        <Menu.Button id="main-cat-drop" className="inline-flex w-full justify-center h-10 items-center gap-x-1.5 rounded-full bg-white px-3 py-2 text-sm font-medium text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
           {selectedMainCategory}
           <ChevronDownIcon className="-mr-1 h-5 w-5 text-gray-400" aria-hidden="true" />
         </Menu.Button>
@@ -35,6 +35,7 @@ export default function MainCategory({selectedMainCategory, handleMainCategoryOp
               {({ active }) => (
                 <a
                   href="#"
+                  id="drop-1"
                   className={classNames(
                     active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                     'block px-4 py-2 text-sm'
@@ -49,6 +50,7 @@ export default function MainCategory({selectedMainCategory, handleMainCategoryOp
               {({ active }) => (
                 <a
                   href="#"
+                  id="drop-2"
                   className={classNames(
                     active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                     'block px-4 py-2 text-sm'
@@ -63,6 +65,7 @@ export default function MainCategory({selectedMainCategory, handleMainCategoryOp
               {({ active }) => (
                 <a
                   href="#"
+                  id="drop-3"
                   className={classNames(
                     active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                     'block px-4 py-2 text-sm'
@@ -77,6 +80,7 @@ export default function MainCategory({selectedMainCategory, handleMainCategoryOp
               {({ active }) => (
                 <a
                   href="#"
+                  id="drop-4"
                   className={classNames(
                     active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                     'block px-4 py-2 text-sm'
@@ -91,6 +95,7 @@ export default function MainCategory({selectedMainCategory, handleMainCategoryOp
               {({ active }) => (
                 <a
                   href="#"
+                  id="drop-5"
                   className={classNames(
                     active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                     'block px-4 py-2 text-sm'
@@ -105,6 +110,7 @@ export default function MainCategory({selectedMainCategory, handleMainCategoryOp
               {({ active }) => (
                 <a
                   href="#"
+                  id="drop-5"
                   className={classNames(
                     active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                     'block px-4 py-2 text-sm'
@@ -119,6 +125,7 @@ export default function MainCategory({selectedMainCategory, handleMainCategoryOp
               {({ active }) => (
                 <a
                   href="#"
+                  id="drop-6"
                   className={classNames(
                     active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                     'block px-4 py-2 text-sm'
@@ -133,6 +140,7 @@ export default function MainCategory({selectedMainCategory, handleMainCategoryOp
               {({ active }) => (
                 <a
                   href="#"
+                  id="drop-7"
                   className={classNames(
                     active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                     'block px-4 py-2 text-sm'
@@ -147,6 +155,7 @@ export default function MainCategory({selectedMainCategory, handleMainCategoryOp
               {({ active }) => (
                 <a
                   href="#"
+                  id="drop-8"
                   className={classNames(
                     active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                     'block px-4 py-2 text-sm'
@@ -161,6 +170,7 @@ export default function MainCategory({selectedMainCategory, handleMainCategoryOp
               {({ active }) => (
                 <a
                   href="#"
+                  id="drop-9"
                   className={classNames(
                     active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                     'block px-4 py-2 text-sm'
