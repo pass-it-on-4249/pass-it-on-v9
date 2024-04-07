@@ -18,7 +18,7 @@ const AccessModal: React.FC<AccessModalProps> = ({ onAccess }) => {
     if (code.length === 4 && /^\d+$/.test(code)) {
       onAccess();
     } else {
-      alert("Enter last 4 digit of your student ID (A...)");
+      alert("Enter last 4 numerical digits of your student ID");
     }
   };
 
@@ -27,7 +27,9 @@ const AccessModal: React.FC<AccessModalProps> = ({ onAccess }) => {
       <div className="modal">
         <form onSubmit={handleSubmit}>
           <label>
-            Enter last 4 digit of your student ID (A...):   
+            Enter last 4 numerical digits of your student ID (e.g. AXXX
+            <span style={{ fontWeight: 'bold', color: 'red' }}>1234</span>
+            Z):
             <input
               type="text"
               maxLength={4}
