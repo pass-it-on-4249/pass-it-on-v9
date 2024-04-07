@@ -98,10 +98,6 @@ function findFirstString(str, choices) {
   return '?';
 }
 
-function test() {
-  console.log("test log");
-}
-
 // Generates or remembers a somewhat-unique ID with distilled user-agent info.
 function getUniqueId() {
   if (typeof window !== 'undefined') {
@@ -124,10 +120,41 @@ function getUniqueId() {
   
 }
 
+// User Id as keyed in by user
+function setUserid(input) {
+  if (typeof window !== 'undefined') {
+    console.log('you are on the browser');
+    localStorage['userId'] = input;
+    console.log("userId in local storage " + localStorage['userId']);
+  } else {
+    console.log('you are on the server');
+  }
+}
+
+function getUserId() {
+  if (typeof window !== 'undefined') {
+    console.log('you are on the browser');
+    if (('userId' in localStorage)) {
+      console.log("userId in local storage " + localStorage['userId']);
+      return localStorage['userId'];
+    } else {
+      return "";
+    }
+  } else {
+    console.log('you are on the server');
+  }
+}
+
+
 // Log the given event.
-function logEvent(event, customName, customInfo) {
+function logEvent(event, customName, customInfo, isSettingUserId = false, userIdInput = "") {
 	
-	console.log('event', event, 'customName', customName, 'customInfo', customInfo);
+	console.log('event', event, 'customName', customName, 'customInfo', customInfo, 'isSettingUserId', isSettingUserId, 'userIdInput', userIdInput);
+
+  if (isSettingUserId) {
+    console.log("isSettingUserId")
+    setUserid(userIdInput);
+  }
 	
   var time = (new Date).getTime();
   var eventName = customName || event.type;
@@ -155,10 +182,10 @@ function logEvent(event, customName, customInfo) {
   var state = location.hash;
 
   if (ENABLE_CONSOLE_LOGGING) {
-    console.log(uid, time, eventName, target, info, state, LOG_VERSION);
+    console.log(uid, time, getUserId(), eventName, target, info, state, LOG_VERSION);
   }
   if (ENABLE_NETWORK_LOGGING) {
-    sendNetworkLog(uid, time, eventName, target, info, state, LOG_VERSION);
+    sendNetworkLog(uid, time, getUserId(), eventName, target, info, state, LOG_VERSION);
   }
 }
 
@@ -204,7 +231,8 @@ return {
 // docs.google.com/forms/d/e/1FAIpQLSc5u3mqQiuZ3ul5r50OnKW-qihPbSPdRcB0p3zQjcVaOUA3ww/viewform?usp=sf_link
 function sendNetworkLog(
   uid,
-  time,
+  timeMs,
+  userid,
   eventname,
   target,
   info,
@@ -213,7 +241,8 @@ function sendNetworkLog(
 var formid = "e/1FAIpQLSc5u3mqQiuZ3ul5r50OnKW-qihPbSPdRcB0p3zQjcVaOUA3ww";
 var data = {
   "entry.1613142373": uid,
-  "entry.1589787878": time,
+  "entry.1589787878": timeMs,
+  "entry.585435731": userid,
   "entry.936741081": eventname,
   "entry.404530990": target,
   "entry.1907841667": info,
@@ -221,7 +250,7 @@ var data = {
   "entry.359647375": log_version
 };
 var params = [];
-for (let key in data) {
+for (var key in data) {
   params.push(key + "=" + encodeURIComponent(data[key]));
 }
 // Submit the form using an image to avoid CORS warnings; warning may still happen, but log will be sent. Go check result in Google Form

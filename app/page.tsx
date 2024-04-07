@@ -16,6 +16,14 @@ const AccessModal: React.FC<AccessModalProps> = ({ onAccess }) => {
     e.preventDefault();
     // Validate the code (e.g., check if it's 4 digits)
     if (code.length === 4 && /^\d+$/.test(code)) {
+      handleLogImplementationWithUserId(
+        null, 
+        "setUserId", 
+        {eventName: "setUserId",
+        info: {}},
+        true,
+        code
+      );
       onAccess();
     } else {
       alert("Enter last 4 numerical digits of your student ID");
@@ -44,9 +52,18 @@ const AccessModal: React.FC<AccessModalProps> = ({ onAccess }) => {
   );
 };
 
+// Log Implementation
+const handleLogImplementationWithUserId = (event:any, customName:any, customInfo:any, isSettingUserId:any, userIdInput:any) => {
+  if (event) {
+    console.log("log " + event.type);
+  } else {
+      console.log("log " + customName);
+  }
+  Logging.default(event, customName, customInfo, isSettingUserId, userIdInput);
+}
+
 export default function Home() {
 
-  // Log Implementation
   const handleLogImplementation = (event:any, customName:any, customInfo:any) => {
     if (event) {
       console.log("log " + event.type);
@@ -55,7 +72,6 @@ export default function Home() {
     }
     Logging.default(event, customName, customInfo);
   }
-
   const handleItemListButtonClick = () => {
     handleLogImplementation(null, "itemListButtonClick", {
       eventName: "itemListButtonClick",
