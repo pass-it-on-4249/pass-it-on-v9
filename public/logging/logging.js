@@ -250,7 +250,7 @@ var data = {
   "entry.359647375": log_version
 };
 var params = [];
-for (key in data) {
+for (var key in data) {
   params.push(key + "=" + encodeURIComponent(data[key]));
 }
 // Submit the form using an image to avoid CORS warnings; warning may still happen, but log will be sent. Go check result in Google Form
