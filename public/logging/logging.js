@@ -226,9 +226,9 @@ return {
 //
 /////////////////////////////////////////////////////////////////////////////
 
-// Logging submission function
+// Logging v1 submission function
 // submits to the google form at this URL:
-// docs.google.com/forms/d/e/1FAIpQLSc5u3mqQiuZ3ul5r50OnKW-qihPbSPdRcB0p3zQjcVaOUA3ww/viewform?usp=sf_link
+// docs.google.com/forms/d/e/1FAIpQLSeVPQRcJ-QTRUg6iVzxVv-MSpezkJ-lfdEt4sdmDsVzCGG3lg/viewform?usp=sf_link
 function sendNetworkLog(
   uid,
   timeMs,
@@ -238,11 +238,11 @@ function sendNetworkLog(
   info,
   state,
   log_version) {
-var formid = "e/1FAIpQLSc5u3mqQiuZ3ul5r50OnKW-qihPbSPdRcB0p3zQjcVaOUA3ww";
+var formid = "e/1FAIpQLSeVPQRcJ-QTRUg6iVzxVv-MSpezkJ-lfdEt4sdmDsVzCGG3lg";
 var data = {
   "entry.1613142373": uid,
   "entry.1589787878": timeMs,
-  "entry.585435731": userid,
+  "entry.855609023": userid,
   "entry.936741081": eventname,
   "entry.404530990": target,
   "entry.1907841667": info,
@@ -250,7 +250,7 @@ var data = {
   "entry.359647375": log_version
 };
 var params = [];
-for (var key in data) {
+for (key in data) {
   params.push(key + "=" + encodeURIComponent(data[key]));
 }
 // Submit the form using an image to avoid CORS warnings; warning may still happen, but log will be sent. Go check result in Google Form
