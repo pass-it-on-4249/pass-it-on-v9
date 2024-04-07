@@ -1,8 +1,46 @@
 "use client";
 
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import * as Logging from "@/public/logging/logging";
+
+// User ID Implementation
+interface AccessModalProps {
+  onAccess: () => void;
+}
+
+const AccessModal: React.FC<AccessModalProps> = ({ onAccess }) => {
+  const [code, setCode] = useState("");
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    // Validate the code (e.g., check if it's 4 digits)
+    if (code.length === 4 && /^\d+$/.test(code)) {
+      onAccess();
+    } else {
+      alert("Enter last 4 digit of your student ID (A...)");
+    }
+  };
+
+  return (
+    <div className="modal-overlay">
+      <div className="modal">
+        <form onSubmit={handleSubmit}>
+          <label>
+            Enter last 4 digit of your student ID (A...):   
+            <input
+              type="text"
+              maxLength={4}
+              value={code}
+              onChange={(e) => setCode(e.target.value)}
+            />
+          </label>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+  );
+};
 
 export default function Home() {
 
@@ -23,9 +61,21 @@ export default function Home() {
     });
   }
 
+  const [showModal, setShowModal] = useState(true);
+  const [accessGranted, setAccessGranted] = useState(false);
+
+  const handleAccess = () => {
+    setShowModal(false);
+    setAccessGranted(true);
+  };
 
   return (
     <main className="flex flex-col bg-white text-stone-900">
+      {showModal && (
+        <AccessModal onAccess={handleAccess} />
+      )}
+      {accessGranted && (
+      <>
       <div className="flex flex-row justify-center items-start width:990px">
         <div style={{ float: "left", paddingTop: 5 }}>
           <Image 
@@ -141,6 +191,8 @@ export default function Home() {
             height={320}
           />
       </div>
+      </>
+      )}
     </main>
   );
 }
