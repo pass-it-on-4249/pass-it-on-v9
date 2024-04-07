@@ -1,7 +1,29 @@
+"use client";
+
 import Image from "next/image";
 import React from "react";
+import * as Logging from "@/public/logging/logging";
 
 export default function Home() {
+
+  // Log Implementation
+  const handleLogImplementation = (event:any, customName:any, customInfo:any) => {
+    if (event) {
+      console.log("log " + event.type);
+    } else {
+        console.log("log " + customName);
+    }
+    Logging.default(event, customName, customInfo);
+  }
+
+  const handleItemListButtonClick = () => {
+    handleLogImplementation(null, "itemListButtonClick", {
+      eventName: "itemListButtonClick",
+      info: {}
+    });
+  }
+
+
   return (
     <main className="flex flex-col bg-white text-stone-900">
       <div className="flex flex-row justify-center items-start width:990px">
@@ -55,7 +77,9 @@ export default function Home() {
                 width={73}
                 height={61}
             />{" "}
-            <a href="/items">
+            <a 
+              href="/items"
+              onClick={handleItemListButtonClick}>
               <Image
                 className="ive_eobj_left ive_clickable padding-right: 2px padding-left: 2px"
                 src="/item_list.png"
