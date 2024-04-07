@@ -47,9 +47,12 @@ function hookEventsToLog() {
   // Set up low-level event capturing.  This intercepts all
   // native events before they bubble, so we log the state
   // *before* normal event processing.
-  for (var event_type in EVENT_TYPES_TO_LOG) {
-    document.addEventListener(event_type, logEvent, true);
+  if (typeof window !== 'undefined') {
+    for (var event_type in EVENT_TYPES_TO_LOG) {
+      document.addEventListener(event_type, logEvent, true);
+    }
   }
+  
 }
 
 // Returns a CSS selector that is descriptive of
@@ -101,17 +104,24 @@ function test() {
 
 // Generates or remembers a somewhat-unique ID with distilled user-agent info.
 function getUniqueId() {
-  if (!('uid' in localStorage)) {
-    var browser = findFirstString(navigator.userAgent, [
-      'Seamonkey', 'Firefox', 'Chromium', 'Chrome', 'Safari', 'OPR', 'Opera',
-      'Edge', 'MSIE', 'Blink', 'Webkit', 'Gecko', 'Trident', 'Mozilla']);
-    var os = findFirstString(navigator.userAgent, [
-      'Android', 'iOS', 'Symbian', 'Blackberry', 'Windows Phone', 'Windows',
-      'OS X', 'Linux', 'iOS', 'CrOS']).replace(/ /g, '_');
-    var unique = ('' + Math.random()).substr(2);
-    localStorage['uid'] = os + '-' + browser + '-' + unique;
+  if (typeof window !== 'undefined') {
+    console.log('you are on the browser');
+    if (!('uid' in localStorage)) {
+      var browser = findFirstString(navigator.userAgent, [
+        'Seamonkey', 'Firefox', 'Chromium', 'Chrome', 'Safari', 'OPR', 'Opera',
+        'Edge', 'MSIE', 'Blink', 'Webkit', 'Gecko', 'Trident', 'Mozilla']);
+      var os = findFirstString(navigator.userAgent, [
+        'Android', 'iOS', 'Symbian', 'Blackberry', 'Windows Phone', 'Windows',
+        'OS X', 'Linux', 'iOS', 'CrOS']).replace(/ /g, '_');
+      var unique = ('' + Math.random()).substr(2);
+      localStorage['uid'] = os + '-' + browser + '-' + unique;
+    }
+    return localStorage['uid'];
+  } else {
+    console.log('you are on the server');
+    return "";
   }
-  return localStorage['uid'];
+  
 }
 
 // Log the given event.
@@ -134,8 +144,14 @@ function logEvent(event, customName, customInfo) {
     infoObj = Object.assign(infoObj, customInfo);
   }
   var info = JSON.stringify(infoObj);
-  var target = document;
-  if (event) {target = elementDesc(event.target);}
+  var target;
+  if (typeof window !== 'undefined') {
+    target = document;
+    if (event) {target = elementDesc(event.target);}
+  } else {
+    target = "";
+  }
+  
   var state = location.hash;
 
   if (ENABLE_CONSOLE_LOGGING) {
@@ -213,6 +229,6 @@ for (let key in data) {
    "/formResponse?" + params.join("&");
 }
 
-module.exports = loggingjs.logEvent;
+export default loggingjs.logEvent;
 
 

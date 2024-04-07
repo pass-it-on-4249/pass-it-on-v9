@@ -7,7 +7,6 @@ import { useState } from "react";
 import PageNav from "@/components/pageNav";
 import ProductCard from "@/components/productCard";
 import ProductCardStaggered from "@/components/productCardStaggered";
-import MasonryLayout from "@/components/masonryLayout";
 import { ShoppingCartIcon } from '@heroicons/react/20/solid';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -27,13 +26,13 @@ export default function ItemList() {
   }
 
   // Log Implementation
-  const handleLogImplementation = (event, customName, customInfo) => {
+  const handleLogImplementation = (event:any, customName:any, customInfo:any) => {
     if (event) {
       console.log("log " + event.type);
     } else {
         console.log("log " + customName);
     }
-    Logging(event, customName, customInfo);
+    Logging.default(event, customName, customInfo);
   }
 
   // If there is no results from search
